@@ -26,10 +26,9 @@ export default function Header() {
         ${scrolled ? "bg-black bg-opacity-90" : "bg-black bg-opacity-30"}
       `}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/">
-          <Image src="/logo.png" alt="Code & Play Logo" width={70} height={70} />
-        </Link>
+      <div className="max-w-7xl mx-auto flex items-center justify-between ml-20">
+      
+      
 
         <nav className="hidden md:flex space-x-8 text-lg font-medium text-white">
           <Link href="#hero" className="hover:text-pink-400 transition">Início</Link>
@@ -38,7 +37,7 @@ export default function Header() {
         </nav>
 
         <div 
-          className="cursor-pointer hover:scale-110 transition-transform text-white"
+          className="cursor-pointer hover:scale-110 transition-transform text-white mr-15"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

@@ -1,6 +1,7 @@
 // Hero.js
 "use client";
 
+
 import Image from "next/image";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -35,23 +36,18 @@ export default function Hero() {
     <motion.section
       style={{
         backgroundImage,
+        transition: "background-image 10s ease-in-out infinite",
       }}
       className="relative grid min-h-screen place-content-center overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center max-w-3xl text-center px-4">
-        <motion.span
-          className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm select-none"
-          animate={{
-            y: [0, -16, 0, 16, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          Code & Play.!
-        </motion.span>
+        <Image
+          src="/logo.png"
+          alt="Code & Play Logo"
+          width={200}
+          height={200}
+          className="mb-4 rounded-full"
+        />
         <h1 className="bg-gradient-to-br from-[#FF3385] to-[#00FFCC] bg-clip-text text-4xl font-extrabold leading-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
           Vista o poder do código e da cultura gamer
         </h1>

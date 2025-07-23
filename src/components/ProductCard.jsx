@@ -7,14 +7,16 @@ export function ProductCard({ imagem, nome, descricao, preco }) {
       <Image
         src={imagem}
         alt={nome}
-        width={300}
-        height={300}
+        width={250}
+        height={250}
         className="object-contain rounded-lg"
       />
       <h2 className="text-xl font-bold mt-4">{nome}</h2>
       <p className="text-sm mt-2 text-gray-300">{descricao}</p>
       <button className="mt-6 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition">
-        Comprar por R${preco.toFixed(2)}
+   Comprar por R${(preco ?? 0).toFixed(2)}
+
+
       </button>
     </BackgroundGradient>
   );
