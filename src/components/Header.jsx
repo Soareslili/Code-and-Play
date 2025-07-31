@@ -27,23 +27,24 @@ export default function Header() {
       `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between ml-20">
-      
-      
+
+
 
         <nav className="hidden md:flex space-x-8 text-lg font-medium text-white">
-          <Link href="#hero" className="hover:text-pink-400 transition">Início</Link>
-          <Link href="#produtos" className="hover:text-pink-400 transition">Coleção</Link>
-          <Link href="#contato" className="hover:text-pink-400 transition">Contato</Link>
+          <Link href="/#hero" className="hover:text-pink-400 transition">Início</Link>
+          <Link href="/#categorias" className="hover:text-pink-400 transition">Produtos</Link>
+          <Link href="/#contato" className="hover:text-pink-400 transition">Contato</Link>
+
         </nav>
 
-        <div 
+        <div
           className="cursor-pointer hover:scale-110 transition-transform text-white mr-15"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <ShoppingCart 
-            size={28} 
-            className={`transition-transform ${isHovered ? "rotate-12" : "rotate-0"}`} 
+          <ShoppingCart
+            size={28}
+            className={`transition-transform ${isHovered ? "rotate-12" : "rotate-0"}`}
           />
         </div>
       </div>

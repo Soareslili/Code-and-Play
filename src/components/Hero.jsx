@@ -1,7 +1,7 @@
 // Hero.js
 "use client";
 
-
+import Link from "next/link";
 import Image from "next/image";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -34,6 +34,7 @@ export default function Hero() {
 
   return (
     <motion.section
+ 
       style={{
         backgroundImage,
         transition: "background-image 10s ease-in-out infinite",
@@ -48,12 +49,13 @@ export default function Hero() {
           height={200}
           className="mb-4 rounded-full"
         />
-        <h1 className="bg-gradient-to-br from-[#FF3385] to-[#00FFCC] bg-clip-text text-4xl font-extrabold leading-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 id="hero" className="bg-gradient-to-br from-[#FF3385] to-[#00FFCC] bg-clip-text text-4xl font-extrabold leading-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
           Vista o poder do código e da cultura gamer
         </h1>
         <p className="my-6 text-base leading-relaxed text-gray-300 md:text-lg">
           Roupas estilosas para programadores, gamers e fãs de anime. Seu estilo, seu universo.
         </p>
+        <Link href="#categorias" passHref>
         <motion.button
           style={{
             border,
@@ -67,9 +69,10 @@ export default function Hero() {
           }}
           className="group relative flex w-fit cursor-pointer items-center gap-2 rounded-full bg-gray-950/10 px-6 py-3 text-gray-50 transition-colors hover:bg-gray-950/50"
         >
-          Veja a coleção
+          Nossa Categoria
           <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
         </motion.button>
+        </Link>
       </div>
 
       <div className="absolute inset-0 z-0">
@@ -77,7 +80,7 @@ export default function Hero() {
           <Stars radius={50} count={2500} factor={4} fade speed={2} />
         </Canvas>
       </div>
-    </motion.section>
+    </motion.section >
   );
 }
 
