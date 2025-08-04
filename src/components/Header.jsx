@@ -6,7 +6,6 @@ import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 
 export default function Header() {
-  const [isHovered, setIsHovered] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,26 +26,16 @@ export default function Header() {
       `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between ml-20">
-
-
-
         <nav className="hidden md:flex space-x-8 text-lg font-medium text-white">
           <Link href="/#hero" className="hover:text-pink-400 transition">Início</Link>
           <Link href="/#categorias" className="hover:text-pink-400 transition">Produtos</Link>
           <Link href="/#contato" className="hover:text-pink-400 transition">Contato</Link>
-
         </nav>
 
-        <div
-          className="cursor-pointer hover:scale-110 transition-transform text-white mr-15"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <ShoppingCart
-            size={28}
-            className={`transition-transform ${isHovered ? "rotate-12" : "rotate-0"}`}
-          />
-        </div>
+     
+        <Link href="/cart" className="cursor-pointer hover:scale-110 transition-transform text-white mr-4">
+          <ShoppingCart size={28} className="hover:rotate-12 transition-transform" />
+        </Link>
       </div>
     </header>
   );

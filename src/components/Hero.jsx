@@ -34,7 +34,7 @@ export default function Hero() {
 
   return (
     <motion.section
- 
+    id="hero"
       style={{
         backgroundImage,
         transition: "background-image 10s ease-in-out infinite",
@@ -49,7 +49,7 @@ export default function Hero() {
           height={200}
           className="mb-4 rounded-full"
         />
-        <h1 id="hero" className="bg-gradient-to-br from-[#FF3385] to-[#00FFCC] bg-clip-text text-4xl font-extrabold leading-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="bg-gradient-to-br from-[#FF3385] to-[#00FFCC] bg-clip-text text-4xl font-extrabold leading-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
           Vista o poder do código e da cultura gamer
         </h1>
         <p className="my-6 text-base leading-relaxed text-gray-300 md:text-lg">

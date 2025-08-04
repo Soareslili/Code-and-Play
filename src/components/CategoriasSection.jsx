@@ -32,7 +32,7 @@ export default function CategoriasSection() {
       style={{ backgroundImage }}
       className="py-20 text-white px-6"
     >
-      <h2 className="text-5xl font-bold mb-10 text-center">Nossos Produtos</h2>
+      <h2 id="categorias" className="text-5xl font-bold mb-10 text-center">Nossos Produtos</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full h-84">
         {categorias.map((cat) => (
           <div
@@ -40,13 +40,16 @@ export default function CategoriasSection() {
             className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition"
           >
             <img src={cat.imagem} alt={cat.nome} className="w-full h-60 object-cover" />
-            <h3 className="text-xl font-semibold mb-6 px-4">{cat.nome}</h3>
+            <div className="flex mt-10 justify-between mr-4">
+               <h3 className="text-2xl font-semibold mb-4 px-2">{cat.nome}</h3>
             <Link
               href={`/categorias/${cat.valor}`}
-              className="bg-pink-600 text-white shadow-lg px-6 py-2 mb-10 rounded-2xl font-semibold cursor-pointer inline-block mx-4"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded transition duration-300 cursor-pointer "
             >
               Ver produtos
             </Link>
+            </div>
+           
           </div>
         ))}
       </div>

@@ -4,7 +4,13 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function CategoriaPage() {
+import { useCart } from "@/context/CartContext";
+
+
+
+export default function CategoriaPage({/* props */ }) {
+  const { addToCart } = useCart()
+
   const { slug } = useParams();
   const [produtos, setProdutos] = useState([]);
 
@@ -48,10 +54,31 @@ export default function CategoriaPage() {
             />
             <h3 className="text-xl font-semibold">{produto.nome}</h3>
             <p className="text-gray-400">{produto.descricao}</p>
-            <p className="text-green-400 mt-2">R$ {produto.preco}</p>
+
+
+            <div className="flex items-center justify-between mt-4">
+              <p className="text-green-400 text-lg font-semibold">
+                R$ {produto.preco}
+              </p>
+
+              <button
+                onClick={() => addToCart({
+                  _id: produto._id,
+                  name: produto.nome,
+                  description: produto.descricao,
+                  price: produto.preco,
+                  image: produto.imagem,
+                })}
+                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded transition duration-300 cursor-pointer"
+              >
+                Adicionar ao Carrinho
+              </button>
+
+            </div>
           </div>
         ))}
       </div>
     </div>
+
   );
 }
